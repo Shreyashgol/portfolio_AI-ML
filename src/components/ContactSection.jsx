@@ -1,15 +1,16 @@
 import {
-  Instagram as InstagramIcon,
   Linkedin as LinkedinIcon,
   Mail as MailIcon,
   MapPin as MapPinIcon,
   Phone as PhoneIcon,
   Send as SendIcon,
   Github as GithubIcon,
+  ExternalLink as ExternalLinkIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { contactInfo, profileLinks } from "@/data/resumeData";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -55,10 +56,10 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Email</h4>
                   <a
-                    href="shreyashgolhani@gmail.com"
+                    href={`mailto:${contactInfo.email}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    shreyashgolhano@gmail.com
+                    {contactInfo.email}
                   </a>
                 </div>
               </div>
@@ -69,10 +70,10 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Phone</h4>
                   <a
-                    href="tel:+11234567890"
+                    href={`tel:${contactInfo.phone}`}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +91 9479601267
+                    {contactInfo.phone}
                   </a>
                 </div>
               </div>
@@ -83,42 +84,39 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    India
+                    {contactInfo.location}
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a 
-                  href="https://www.linkedin.com/in/shreyash-golhani-b95b172b5/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
-                  title="LinkedIn"
-                >
-                  <LinkedinIcon className="h-6 w-6" />
-                </a>
-                <a 
-                  href="https://www.instagram.com/golhanishreyas2024/?hl=en" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
-                  title="Instagram"
-                >
-                  <InstagramIcon className="h-6 w-6" />
-                </a>
-                <a 
-                  href="https://github.com/Shreyashgol" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
-                  title="GitHub"
-                >
-                  <GithubIcon className="h-6 w-6" />
-                </a>
+              <h4 className="font-medium mb-4"> Resume Profile Links</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {profileLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 hover:border-primary transition-colors"
+                    title={link.label}
+                  >
+                    <span className="flex items-center gap-2">
+                      {link.label === "LinkedIn" ? (
+                        <LinkedinIcon className="h-5 w-5 text-primary" />
+                      ) : link.label === "GitHub" ? (
+                        <GithubIcon className="h-5 w-5 text-primary" />
+                      ) : (
+                        <ExternalLinkIcon className="h-5 w-5 text-primary" />
+                      )}
+                      <span className="text-sm text-muted-foreground">
+                        {link.label}
+                      </span>
+                    </span>
+                    <ExternalLinkIcon className="h-4 w-4 text-primary" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
