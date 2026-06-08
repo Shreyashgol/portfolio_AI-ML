@@ -46,13 +46,27 @@ export const skillGroups = [
     skills: ["Python", "TypeScript", "JavaScript"],
   },
   {
+    title: "Generative AI",
+    skills: ["CrewAI", "RAG", "Fine Tuning","MCP", 
+      "Agentic AI & Multi-Agent Systems",
+    "Voice AI Systems", "Context Engineering", "AI Agent Evaluation & Benchmarking", "Multi-modal AI Systems (Text, Voice, Images)"],
+  },
+  {
     title: "Data Science & ML Concepts",
     skills: [
-      "Generative AI",
+      "Classical ML",
+      "NLP",
+      "Random Forest",
+      "XGBoost",
+      "Naive Bayes",
+      "SVM",
+      "PCA",
+      "Essemble Learning",
       "Model Evaluation",
       "Feature Engineering",
       "Data Analysis",
       "Data Visualization",
+      "Tableu"
     ],
   },
   {
@@ -62,6 +76,7 @@ export const skillGroups = [
       "NumPy",
       "Scikit-learn",
       "LangChain",
+      "LangGraph",
       "LangSmith",
       "FastAPI",
       "Streamlit",
@@ -75,6 +90,7 @@ export const skillGroups = [
       "MySQL",
       "MongoDB",
       "Vector Databases",
+      "Supabase"
     ],
   },
   {
