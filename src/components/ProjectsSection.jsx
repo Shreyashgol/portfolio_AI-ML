@@ -53,14 +53,14 @@ export const ProjectsSection = () => {
                   {project.description}
                 </p>
 
-                <ul className="space-y-2 text-left text-sm text-muted-foreground mb-5">
+                {/* <ul className="space-y-2 text-left text-sm text-muted-foreground mb-5">
                   {project.highlights.map((highlight) => (
                     <li key={highlight} className="flex gap-2">
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
                       <span>{highlight}</span>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
 
                 <div className="flex flex-wrap gap-3 items-center">
                   {project.links.map((link) => (

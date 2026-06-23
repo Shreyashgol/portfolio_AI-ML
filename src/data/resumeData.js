@@ -201,4 +201,103 @@ export const projects = [
       },
     ],
   },
+  {
+    id: 4,
+    title: "Document AI Platform",
+    subtitle: "Engineering PDF → Editable, Searchable Knowledge",
+    period: "Jun 2026",
+    image: "/projects/project9.png",
+    tags: [
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "OpenCV",
+      "OpenCLIP",
+      "React",
+      "TypeScript",
+      "Clean Architecture",
+    ],
+    description:
+      "Transforms P&IDs, schematics, and flowcharts into structured domain objects — extracting every symbol via a full CV pipeline, classifying it, embedding it into pgvector for semantic search, and linking it in a relationship graph editable on a Konva canvas.",
+    highlights: [
+      "Built a durable Postgres-backed job queue (FOR UPDATE SKIP LOCKED) replacing Redis/Celery, with per-stage retries, backoff, dead-lettering, and crash recovery.",
+      "Clean Architecture + DDD with pluggable ports: swap OCR, embedder, classifier, or object store with zero domain changes.",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Shreyashgol/doc_editable_platform",
+      },
+      {
+        label: "Live",
+        url: "https://doc-editable-platform.vercel.app",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Enterprise Document Intelligence",
+    subtitle: "From-Scratch NER + RAG + Knowledge Graph Platform",
+    period: "Jun 2026",
+    image: "/projects/project7.png",
+    tags: [
+      "FastAPI",
+      "PyTorch",
+      "BiLSTM NER",
+      "RAG",
+      "Knowledge Graph",
+      "React",
+      "Python",
+      "Groq",
+    ],
+    description:
+      "Turns unstructured enterprise documents (PDF, DOCX, EML) into a searchable, connected knowledge base — implementing every NLP component (tokenizer, BIO tagger, BiLSTM NER, relation extractor, knowledge graph) from scratch with 333 passing tests.",
+    highlights: [
+      "Custom-trained BiLSTM NER model with hybrid tagger combining deterministic rules (EMAIL/PHONE/DATE) and neural model (PERSON/ORG/LOCATION) for zero-hallucination precision.",
+      "Production RAG pipeline with two-stage retrieve-broad → rerank-precise + agentic chained workflow across five composable document analysis agents.",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Shreyashgol/enterprise_document_intelligence_platform",
+      },
+      {
+        label: "Live",
+        url: "https://enterprise-document-intelligence-pl-nine.vercel.app",
+      }
+    ],
+  },
+  {
+    id: 6,
+    title: "BISfit Engine",
+    subtitle: "RAG System for Bureau of Indian Standards",
+    period: "May 2026",
+    image: "/projects/project8.png",
+    tags: [
+      "RAG",
+      "FAISS",
+      "Llama 3",
+      "Groq",
+      "FastAPI",
+      "TypeScript",
+      "MiniLM",
+      "Python",
+    ],
+    description:
+      "Production-grade four-layer RAG system grounded in SP 21:2005 (580 IS standards for building materials) — delivering cited, hallucination-resistant answers in under 2 seconds via query reformulation, FAISS vector search, and cosine re-ranking.",
+    highlights: [
+      "Achieved 90% Hit@3 and 0.90 MRR@5 on the evaluation benchmark, with 1.71s average latency — exceeding all performance targets.",
+      "Restructured 584 clean, metadata-rich semantic chunks into a FAISS index with Llama 3.1 for query reformulation and Llama 3.3 70B for grounded generation.",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Aggarwalmansi/BISfit-Engine",
+      },
+      {
+        label: "Live",
+        url: "https://bi-sfit-engine.vercel.app",
+      }
+    ],
+  },
 ];
